@@ -1,0 +1,66 @@
+@import "tailwindcss";
+/* Enable `.dark` class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme Tokens */
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  /* Primary colors */
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+}
+
+@layer utilities {
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  .animate-accordion-down {
+    animation: accordion-down 0.2s ease-out;
+  }
+
+  .animate-accordion-up {
+    animation: accordion-up 0.2s ease-out;
+  }
+}
+
+/* Light mode defaults */
+:root {
+  --border: 42 15% 70%;         /* soft beige border */
+  --input: 42 35% 96%;          /* off-white input area */
+  --ring: 45 90% 50%;           /* golden highlight (like a sticky note edge) */
+  --background: 42 35% 97%;     /* warm paper-like background */
+  --foreground: 25 30% 20%;     /* dark brown for text */
+  --primary: 45 100% 60%;       /* yellow sticky-note color */
+  --primary-foreground: 25 30% 15%; /* dark brown on yellow */
+}
+
+/* Dark mode overrides */
+.dark {
+  --border: 45 10% 30%;          /* muted warm gray */
+  --input: 42 10% 15%;           /* dark paper tone */
+  --ring: 45 90% 60%;            /* golden accent */
+  --background: 42 10% 8%;       /* near-black with a warm hue */
+  --foreground: 42 20% 90%;      /* soft cream text */
+  --primary: 45 100% 55%;        /* warm golden yellow */
+  --primary-foreground: 42 10% 10%; /* nearly black text on yellow */
+}
