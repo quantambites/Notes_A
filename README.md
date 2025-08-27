@@ -36,8 +36,8 @@ It is composed of:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/quantambites/ecommerce.git
-   cd ecommerce/server
+   git clone https://github.com/quantambites/Notes_A.git
+   cd Notes_A/notes_server
    ```
 
 2. Install dependencies and run:
@@ -47,15 +47,13 @@ It is composed of:
      ./mvnw spring-boot:run
      ```
 
-   - Or via your IDE (IntelliJ/VSCode): Run `EcommerceServerApplication.java`
-
 ---
 
 ### 📱 Frontend Setup (React - Vite)
 
 1. Navigate to frontend directory:
    ```bash
-   cd ecommerce/client
+   cd Notes_A/notes_client
    ```
 
 2. Install dependencies:
@@ -75,7 +73,7 @@ It is composed of:
 ## 📂 Project Structure
 
 ```
-Notes_app/
+Notes_A/
 │
 ├── notes_server/              # Spring Boot backend
 │   └── src/main/java/   # Controllers, Services, Models, Repositories, Config
